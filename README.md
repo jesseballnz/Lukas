@@ -1,4 +1,4 @@
-# Lukas
+# Lukas Steak Cooking Planner
 
 A simple steak-cooking planner for braais and dinner service.
 
