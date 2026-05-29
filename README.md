@@ -16,4 +16,4 @@ This small web app lets you:
 
 ## How to use it
 
-Open `/tmp/workspace/jesseballnz/Lukas/index.html` in a browser, or serve the folder with a static file server.
+Open `index.html` in a browser, or serve the folder with a static file server.
