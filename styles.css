@@ -1,0 +1,181 @@
+:root {
+  color-scheme: light;
+  --bg: #fff8ef;
+  --panel: #ffffff;
+  --border: #e6d5c3;
+  --text: #2b2118;
+  --muted: #705a45;
+  --accent: #b14517;
+  --accent-dark: #8f320d;
+  --shadow: 0 14px 32px rgba(73, 35, 12, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(180deg, #fff4e6 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.intro,
+.section-header p,
+.empty-state,
+.timeline,
+label {
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.controls,
+.guest-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.section-header {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--accent-dark);
+}
+
+.guest-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.guest-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fffaf5;
+}
+
+.guest-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.guest-card button {
+  width: auto;
+  padding: 10px 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.timeline {
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.timeline li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding-top: 24px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}
