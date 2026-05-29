@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lukas Steak Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Braai timing guide</p>
+        <h1>Cook every guest’s steak the way they like it.</h1>
+        <p class="intro">
+          Save each guest’s preferred doneness, pick a serving time, and get a
+          clear grill schedule for when each steak goes on and comes off.
+        </p>
+      </section>
+
+      <section class="panel controls">
+        <div>
+          <label for="serve-time">Serving time</label>
+          <input id="serve-time" name="serve-time" type="time" value="19:00" />
+        </div>
+        <div>
+          <label for="rest-minutes">Rest time (minutes)</label>
+          <input
+            id="rest-minutes"
+            name="rest-minutes"
+            type="number"
+            min="0"
+            max="30"
+            value="5"
+          />
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <h2>Guest preferences</h2>
+            <p>Add each guest once so the chef can follow the plan.</p>
+          </div>
+        </div>
+
+        <form id="guest-form" class="guest-form">
+          <div>
+            <label for="guest-name">Guest name</label>
+            <input
+              id="guest-name"
+              name="guest-name"
+              type="text"
+              maxlength="40"
+              placeholder="e.g. Sarah"
+              required
+            />
+          </div>
+          <div>
+            <label for="doneness">Steak preference</label>
+            <select id="doneness" name="doneness">
+              <option value="rare">Rare</option>
+              <option value="medium-rare" selected>Medium rare</option>
+              <option value="medium">Medium</option>
+              <option value="medium-well">Medium well</option>
+              <option value="well-done">Well done</option>
+            </select>
+          </div>
+          <button type="submit">Add guest</button>
+        </form>
+
+        <ul id="guest-list" class="guest-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <h2>Cooking schedule</h2>
+            <p>The plan updates automatically as guests are added.</p>
+          </div>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          Add at least one guest to build a grill plan.
+        </div>
+
+        <div id="results" class="results hidden">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Guest</th>
+                  <th>Preference</th>
+                  <th>Put on</th>
+                  <th>Flip</th>
+                  <th>Take off</th>
+                  <th>Serve</th>
+                </tr>
+              </thead>
+              <tbody id="schedule-body"></tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>Chef action list</h3>
+            <ol id="timeline" class="timeline"></ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
